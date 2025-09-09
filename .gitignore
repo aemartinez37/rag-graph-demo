@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# pnpm store
+.pnpm-store/
+
+# TypeScript build output
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Optional cache and history
+.cache/
+.eslintcache
+.nyc_output/
+coverage/
+*.tgz
+.node_repl_history
+
+# Output of 'pnpm pack'
+*.tgz
+
+# Optional lockfiles (if you want to ignore them)
+# Uncomment if you don't want to commit lockfiles
+# pnpm-lock.yaml
