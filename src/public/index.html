@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG-Powered Rock Paper Scissors Lizard Spock</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎮 RAG-Powered Game Assistant</h1>
+      <p>Demonstrating Retrieval-Augmented Generation with Extended Rock Paper Scissors</p>
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="demo-section">
+      <div class="section-title">
+        <span class="emoji">🤖</span>
+        Interactive AI Chat
+      </div>
+      <div id="chatContainer" class="chat-container">
+        <div class="message ai-message">
+          <strong>AI Assistant:</strong> Welcome! I'm a Rock
+          Paper Scissors game assistant. Ask me anything about rules, strategies, or
+          let's play!
+        </div>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="userInput" placeholder="Ask about game rules, strategies, or say 'let's play'..." />
+        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+      </div>
+
+      <div id="loading" class="loading">🤔 Thinking...</div>
+
+      <div class="quick-actions">
+        <div class="quick-action" onclick="quickQuestion('What are all the rules?')">
+          📖 Show All Rules
+        </div>
+        <div class="quick-action" onclick="quickQuestion('How does Spock work?')">
+          🖖 Explain Spock
+        </div>
+        <div class="quick-action" onclick="quickQuestion('What beats Rock?')">
+          🪨 What Beats Rock?
+        </div>
+        <div class="quick-action" onclick="quickQuestion('Play a game!')">
+          🎯 Let's Play!
+        </div>
+      </div>
+    </div>
+
+    <!-- Rules Display -->
+    <div class="demo-section">
+      <div class="section-title">
+        <span class="emoji">📊</span>
+        Current Game Rules (From Neo4j Database)
+      </div>
+      <button class="btn btn-secondary" onclick="loadRules()">Load Current Rules</button>
+      <div id="rulesDisplay" class="rules-display" style="margin-top: 15px;">
+        Click "Load Current Rules" to see the knowledge retrieved from Neo4j...
+      </div>
+    </div>
+
+    <!-- Add New Choice -->
+    <div class="demo-section">
+      <div class="section-title">
+        <span class="emoji">➕</span>
+        Extend the Game (Dynamic Knowledge)
+      </div>
+      <p style="margin-bottom: 20px; color: #666;">
+        Demonstrate how RAG allows dynamic knowledge expansion by adding new game choices!
+      </p>
+
+      <div class="add-choice-form">
+        <div class="form-row">
+          <label>Name:</label>
+          <input type="text" id="newChoiceName" placeholder="e.g., Wizard" />
+        </div>
+        <div class="form-row">
+          <label>Defeats:</label>
+          <input type="text" id="defeats1" placeholder="First choice it defeats" />
+          <input type="text" id="defeats2" placeholder="Second choice it defeats" />
+        </div>
+        <div class="form-row">
+          <label>Reasons:</label>
+          <input type="text" id="reason1" placeholder="How it defeats first choice" />
+          <input type="text" id="reason2" placeholder="How it defeats second choice" />
+        </div>
+        <button class="btn btn-secondary" onclick="addNewChoice()">Add to Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/scripts/main.js"></script>
+</body>
+
+</html>

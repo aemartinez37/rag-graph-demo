@@ -1,7 +1,14 @@
 import Fastify from "fastify";
+import path from "path";
+import fastifyStatic from "@fastify/static";
 import { answer } from "./generate";
 
 const app = Fastify();
+
+app.register(fastifyStatic, {
+  root: path.join(__dirname, "public"),
+  prefix: "/",
+});
 
 app.post("/ask", async (req: any, reply) => {
   const { question } = req.body ?? {};
