@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import "dotenv/config";
 
 export const config = {
   neo4j: {
@@ -8,7 +8,6 @@ export const config = {
   },
   gemini: {
     apiKey: process.env.GEMINI_API_KEY!,
-    embeddingModel: process.env.EMBEDDING_MODEL ?? 'embedding-001',
-    chatModel: process.env.CHAT_MODEL ?? 'gemini-1.5-flash',
+    chatModel: process.env.CHAT_MODEL ?? "gemini-1.5-flash",
   },
 };

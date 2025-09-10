@@ -1,8 +1,7 @@
-version: '3.8'
+version: "3.8"
 services:
   neo4j:
     image: neo4j:5.20
-    container_name: neo4j
     environment:
       NEO4J_AUTH: neo4j/password
       NEO4JLABS_PLUGINS: '["apoc"]'

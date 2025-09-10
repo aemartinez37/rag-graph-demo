@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:api": "tsx watch src/server.ts",
+    "seed": "tsx src/scripts/seed.ts",
+    "dev": "tsx watch src/server.ts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
   },

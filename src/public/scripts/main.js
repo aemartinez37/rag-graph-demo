@@ -18,7 +18,7 @@ async function sendMessage() {
     });
 
     const data = await response.json();
-    addMessageToChat("ai", data.answer);
+    addMessageToChat("ai", data.response);
   } catch (error) {
     addMessageToChat(
       "ai",
