@@ -1,5 +1,6 @@
 import neo4j from "neo4j-driver";
 import { config } from "../config";
+import { getGeminiEmbedding } from "../services/gemini";
 
 const driver = neo4j.driver(
   config.neo4j.uri,
@@ -17,28 +18,43 @@ async function seedGraph() {
 
     console.log("🌱 Creating nodes...");
     await session.run(`
-      CREATE (:Move {name: "Rock"}),
-             (:Move {name: "Paper"}),
-             (:Move {name: "Scissors"})
+      CREATE (:Move {name: "rock"}),
+             (:Move {name: "paper"}),
+             (:Move {name: "scissors"})
     `);
 
     console.log("🔗 Creating relationships with action...");
-    await session.run(`
-      MATCH (r:Move {name: "Rock"}), (s:Move {name: "Scissors"})
-      CREATE (r)-[:BEATS {action: "crushes"}]->(s)
-    `);
+    let action = "crushes";
+    let actionEmbedding = await getGeminiEmbedding(action);
+    await session.run(
+      `
+      MATCH (r:Move {name: "rock"}), (s:Move {name: "scissors"})
+      CREATE (r)-[:BEATS {action: $action, embedding: $embedding}]->(s)
+    `,
+      { action, embedding: actionEmbedding }
+    );
 
-    await session.run(`
-      MATCH (s:Move {name: "Scissors"}), (p:Move {name: "Paper"})
+    action = "cuts";
+    actionEmbedding = await getGeminiEmbedding(action);
+    await session.run(
+      `
+      MATCH (s:Move {name: "scissors"}), (p:Move {name: "paper"})
       WITH s, p
-      CREATE (s)-[:BEATS {action: "cuts"}]->(p)
-    `);
+      CREATE (s)-[:BEATS {action: $action, embedding: $embedding}]->(p)
+    `,
+      { action, embedding: actionEmbedding }
+    );
 
-    await session.run(`
-      MATCH (p:Move {name: "Paper"}), (r:Move {name: "Rock"})
+    action = "covers";
+    actionEmbedding = await getGeminiEmbedding(action);
+    await session.run(
+      `
+      MATCH (p:Move {name: "paper"}), (r:Move {name: "rock"})
       WITH p, r
-      CREATE (p)-[:BEATS {action: "covers"}]->(r)
-    `);
+      CREATE (p)-[:BEATS {action: $action, embedding: $embedding}]->(r)
+    `,
+      { action, embedding: actionEmbedding }
+    );
 
     console.log("✅ Graph seeded successfully.");
   } catch (err) {

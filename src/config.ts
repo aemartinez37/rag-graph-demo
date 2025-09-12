@@ -8,6 +8,7 @@ export const config = {
   },
   gemini: {
     apiKey: process.env.GEMINI_API_KEY!,
+    embeddingModel: process.env.EMBEDDING_MODEL ?? "gemini-embedding-001",
     chatModel: process.env.CHAT_MODEL ?? "gemini-1.5-flash",
   },
 };
