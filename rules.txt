@@ -1,0 +1,13 @@
+This is a competitive game played between two participants.
+
+Each participant selects one of the following options:
+- Rock
+- Paper
+- Scissors
+
+Rules:
+- Rock crushes Scissors
+- Scissors cuts Paper
+- Paper covers Rock
+
+If both participants choose the same option, the result is a draw.

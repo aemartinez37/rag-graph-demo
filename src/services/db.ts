@@ -1,13 +1,14 @@
 import neo4j from "neo4j-driver";
 import { config } from "../config";
 import { getGeminiEmbedding } from "./gemini";
+import { AnnotatedDocument } from "langextract";
 
 const driver = neo4j.driver(
   config.neo4j.uri,
   neo4j.auth.basic(config.neo4j.user, config.neo4j.password)
 );
 
-export async function runCypher(query: string): Promise<string[]> {
+export async function runCypher(query: string): Promise<Object> {
   const session = driver.session();
   try {
     console.log("Running Cypher Query:", query);
@@ -15,7 +16,7 @@ export async function runCypher(query: string): Promise<string[]> {
     // console.log("Normalized Cypher Query:", query);
     const result = await session.run(query);
     console.log("Cypher Query Result:", result.records);
-    return result.records.map((r) => r.map((f) => f.toString()).join(" "));
+    return result.records.map((r) => r.toObject());
   } finally {
     await session.close();
   }
@@ -74,5 +75,53 @@ async function findBestMatchingAction(
     return null;
   } finally {
     await session.close();
+  }
+}
+
+export async function saveExtractedRules(
+  documents: AnnotatedDocument[]
+): Promise<void> {
+  const session = driver.session();
+
+  try {
+    // 🧹 Clean existing rules
+    await session.run(`MATCH (s:Symbol) DETACH DELETE s`);
+
+    // 💾 Save new rules
+    for (const doc of documents) {
+      if (!doc.extractions || !Array.isArray(doc.extractions)) continue;
+
+      for (const extraction of doc.extractions) {
+        const attrs = extraction.attributes;
+        if (!attrs) continue;
+
+        if (attrs.interaction === "draw") {
+          const { option, condition } = attrs;
+          // For draw, create a self-referential relationship
+          await session.run(
+            `
+            MERGE (s:Symbol {name: $option})
+            MERGE (s)-[:DRAWS {condition: $condition, action: $action}]->(s)
+            `,
+            { option, condition, action: "ties" }
+          );
+        } else {
+          const { winner, loser, action, condition } = attrs;
+          await session.run(
+            `
+            MERGE (w:Symbol {name: $winner})
+            MERGE (l:Symbol {name: $loser})
+            MERGE (w)-[:DEFEATS {condition: $condition, action: $action}]->(l)
+            `,
+            { winner, loser, action, condition }
+          );
+        }
+      }
+    }
+  } catch (err) {
+    console.error("❌ Error saving rules:", err);
+  } finally {
+    await session.close();
+    await closeDriver();
   }
 }

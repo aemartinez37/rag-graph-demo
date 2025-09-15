@@ -27,11 +27,15 @@ app.post("/ask", async (req: any, reply) => {
     // Step 2: Run Cypher query
     const result = await runCypher(cypherQuery);
 
-    const values = result.join(";") || "No result found";
+    const values = result || "No result found";
 
     // Step 3: Generate natural language response
     // console.log("--> Cypher Query Result:", values);
-    const response = await getGeminiResponse(question, cypherQuery, values);
+    const response = await getGeminiResponse(
+      question,
+      cypherQuery,
+      JSON.stringify(values)
+    );
 
     reply.send({ response });
 
