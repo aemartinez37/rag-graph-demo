@@ -62,6 +62,10 @@ async function seedGraph() {
     ? result
     : [result];
 
+  // Get rules from local in case LLM returns no expected results
+  // const rawData = fs.readFileSync("./rules.json", "utf-8");
+  // const documents = JSON.parse(rawData);
+
   console.log("🧠 Extracted Rules:");
   console.log(JSON.stringify(documents, null, 2));
 

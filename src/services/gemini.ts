@@ -52,6 +52,7 @@ export async function getGeminiQuery(message: string): Promise<string> {
     Never return complete nodes or relationships, only their properties.
     Never RETURN nodes without a relationship action, but do not infer them, they must come from the query result.
     Never query without variables for nodes and relationships.
+    If the question in a Cypher query involves a matchup, always generate Cypher queries that check both directions of a matchup (e.g., Rock vs Paper / Paper vs Rock).
     Keep querys as simple as possible.
     Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
     Do not include any text except the generated Cypher statement.
