@@ -1,6 +1,6 @@
 import neo4j from "neo4j-driver";
 import { config } from "../config";
-import { getGeminiEmbedding } from "./gemini";
+import { getGeminiEmbedding, validateGeminiQuery } from "./gemini";
 import { AnnotatedDocument } from "langextract";
 
 const driver = neo4j.driver(
@@ -11,11 +11,14 @@ const driver = neo4j.driver(
 export async function runCypher(query: string): Promise<Object> {
   const session = driver.session();
   try {
-    console.log("Running Cypher Query:", query);
+    console.log("Generated Cypher Query:", query);
     // query = await normalizeAndUpdateCypher(query);
     // console.log("Normalized Cypher Query:", query);
+    // query = await validateGeminiQuery(query);
+    // console.log("Validated Cypher Query:", query);
     const result = await session.run(query);
-    console.log("Cypher Query Result:", result.records);
+    console.log("---------------------------------------");
+    // console.log("Cypher Query Result:", result.records);
     return result.records.map((r) => r.toObject());
   } finally {
     await session.close();

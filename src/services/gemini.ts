@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { config } from "../config";
+import { GRAPH_SCHEMA } from "../constants";
 
 const genAI = new GoogleGenerativeAI(config.gemini.apiKey);
 
@@ -17,49 +18,50 @@ export async function getGeminiQuery(message: string): Promise<string> {
   const model = genAI.getGenerativeModel({
     model: config.gemini.chatModel,
     systemInstruction: `
-    Task: Generate Cypher statement to query a graph database.
+    Task: Generate Cypher statement to query a graph database answering a given natural language question.
+
     Instructions:
-    Use only the provided relationship types and properties in the schema.
-    Do not use any other relationship types or properties that are not provided.
+    - Use only the provided relationship types and properties in the given schema.
+    - Do not use any other relationship types or properties that are not provided in the schema.
+    - Do not include any explanations or apologies in your responses.
+    - Each relationship between two nodes is considered a "rule".
+    - The properties 'name' is a case-sensitive single words and must be compared capitalized.
+    - The properties 'action' is a case-sensitive single words and must be compared in lowercase.
+    - Do not infer any property values unless explicitly provided in the question.
+    - When a query involves a chain of defeats (e.g., "X defeats the symbol that defeats Y"), ensure the relationship directions reflect the full path.
+    - Never return complete nodes or relationships, only their properties.
+    - Keep querys as simple as possible.
+    - Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
+    - Do not include any text except the generated Cypher statement.
+    - Do not include any formatting or markdown.
+
     Schema:
-    Node Types:
-    - Symbol
-
-    Node Properties:
-    - Symbol:
-      - name: STRING
-
-    Relationship Types:
-    - DEFEATS
-    - DRAWS
-
-    Relationship Properties:
-    - DEFEATS:
-      - action: STRING
-      - condition: STRING
-    - DRAWS:
-      - condition: STRING
-
-    Relationship Patterns:
-    - (:Symbol)-[:DEFEATS]->(:Symbol)
-    - (:Symbol)-[:DRAWS]->(:Symbol)
-
-    Note: Do not include any explanations or apologies in your responses.
-    Each relationship between two nodes is considered a "rule".
-    The properties 'name' is a case-sensitive single words and must be compared capitalized.
-    The properties 'action' is a case-sensitive single words and must be compared in lowercase.
-    Do not infer any property values unless explicitly provided in the question.
-    Never return complete nodes or relationships, only their properties.
-    Never RETURN nodes without a relationship action, but do not infer them, they must come from the query result.
-    Never query without variables for nodes and relationships.
-    If the question in a Cypher query involves a matchup, always generate Cypher queries that check both directions of a matchup (e.g., Rock vs Paper / Paper vs Rock).
-    Keep querys as simple as possible.
-    Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
-    Do not include any text except the generated Cypher statement.
-    Do not include any formatting or markdown.
+    ${GRAPH_SCHEMA}
   `,
   });
   const prompt = `The question is: "${message}"`;
+
+  const result = await model.generateContent(prompt);
+  return result.response.text().trim();
+}
+
+export async function validateGeminiQuery(query: string): Promise<string> {
+  const model = genAI.getGenerativeModel({
+    model: config.gemini.chatModel,
+    systemInstruction: `
+    Task: Validate and correct (if needed) the following Cypher query based on the schema.
+
+    Instructions:
+    - If the query is already valid, return it unchanged.
+    - Always ensure that the query adheres strictly to the provided schema.
+    - The query cannot return complete nodes or relationships, only their properties.
+    - Do not include any formatting or markdown.
+
+    Schema:
+    ${GRAPH_SCHEMA}
+  `,
+  });
+  const prompt = `Cypher query to correct: "${query}"`;
 
   const result = await model.generateContent(prompt);
   return result.response.text().trim();
