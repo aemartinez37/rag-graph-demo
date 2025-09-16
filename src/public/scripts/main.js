@@ -35,6 +35,10 @@ function quickQuestion(question) {
   sendMessage();
 }
 
+function fillInput(question) {
+  document.getElementById("userInput").value = question;
+}
+
 function addMessageToChat(sender, message) {
   const chatContainer = document.getElementById("chatContainer");
   const messageDiv = document.createElement("div");

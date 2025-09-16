@@ -52,7 +52,7 @@ body {
 }
 
 .chat-container {
-  max-height: 400px;
+  height: 450px;
   overflow-y: auto;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
@@ -136,13 +136,20 @@ input[type="text"]:focus {
 }
 
 .quick-action {
-  padding: 15px;
+  padding: 10px;
   background: #f7fafc;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  align-content: center;
+
+  &.full-width {
+    grid-column: 1 / -1;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 
 .quick-action:hover {

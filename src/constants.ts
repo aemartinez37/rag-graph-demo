@@ -24,4 +24,5 @@ Node Types:
 Notes:
 - Each node of type Symbol has just one outgoing directed relationship of type DEFEATS to one other node, and also one directed self-loop of type DRAWS.
 - The DEFEATS relationship form a cyclic intransitive relation among all Symbol nodes.
+- Each relationship between two nodes is considered a "rule".
 `;
