@@ -17,6 +17,7 @@ export async function getGeminiEmbedding(text: string): Promise<number[]> {
 export async function getGeminiQuery(message: string): Promise<string> {
   const model = genAI.getGenerativeModel({
     model: config.gemini.chatModel,
+    generationConfig: { temperature: 0.2 },
     systemInstruction: `
     Task: Generate Cypher statement to query a graph database answering a given natural language question.
 
