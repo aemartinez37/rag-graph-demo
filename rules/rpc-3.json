@@ -1,0 +1,71 @@
+[
+  {
+    "documentId": "doc_m4smcv",
+    "text": "This is a competitive game played between two participants.\n\nEach participant selects one of the following options:\n- Rock\n- Paper\n- Scissors\n\nRules:\n- Rock crushes Scissors\n- Scissors cuts Paper\n- Paper covers Rock\n\nIf both participants choose the same option, the result is a draw.\n",
+    "extractions": [
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Scissors",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Scissors",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cuts Paper",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Paper",
+          "action": "cuts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper covers Rock",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Rock",
+          "action": "covers",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Rock",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Paper",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Scissors",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      }
+    ]
+  }
+]

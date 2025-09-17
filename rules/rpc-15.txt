@@ -1,0 +1,127 @@
+This is a competitive game played between two participants.
+
+Each participant selects one of the following options:
+- Rock
+- Fire
+- Scissors
+- Snake
+- Human
+- Tree
+- Wolf
+- Sponge
+- Paper
+- Air
+- Water
+- Dragon
+- Devil
+- Lightning
+- Gun
+
+Rules:
+- Rock crushes Fire
+- Rock crushes Scissors
+- Rock crushes Snake
+- Rock crushes Human
+- Rock crushes Tree
+- Rock crushes Wolf
+- Rock crushes Sponge
+- Fire burns Scissors
+- Fire burns Snake
+- Fire burns Human
+- Fire burns Tree
+- Fire burns Wolf
+- Fire burns Sponge
+- Fire burns Paper
+- Scissors cut Snake
+- Scissors cut Human
+- Scissors cut Tree
+- Scissors cut Wolf
+- Scissors cut Sponge
+- Scissors cut Paper
+- Scissors cut Air
+- Snake bites Human
+- Snake bites Tree
+- Snake bites Wolf
+- Snake bites Sponge
+- Snake bites Paper
+- Snake bites Air
+- Snake bites Water
+- Human chops Tree
+- Human traps Wolf
+- Human squeezes Sponge
+- Human writes Paper
+- Human breathes Air
+- Human drinks Water
+- Human slays Dragon
+- Tree shelters Wolf
+- Tree absorbs Sponge
+- Tree holds Paper
+- Tree parts Air
+- Tree drinks Water
+- Tree binds Dragon
+- Tree resists Devil
+- Wolf eats Sponge
+- Wolf tears Paper
+- Wolf howls through Air
+- Wolf drinks Water
+- Wolf hunts Dragon
+- Wolf defies Devil
+- Wolf dodges Lightning
+- Sponge soaks Paper
+- Sponge filters Air
+- Sponge absorbs Water
+- Sponge smothers Dragon
+- Sponge clings to Devil
+- Sponge insulates Lightning
+- Sponge jams Gun
+- Paper fans Air
+- Paper covers Water
+- Paper binds Dragon
+- Paper exorcises Devil
+- Paper grounds Lightning
+- Paper jams Gun
+- Paper wraps Rock
+- Air evaporates Water
+- Air erodes Dragon
+- Air disperses Devil
+- Air diffuses Lightning
+- Air rusts Gun
+- Air weathers Rock
+- Air fuels Fire
+- Water drowns Dragon
+- Water quenches Devil
+- Water conducts Lightning
+- Water rusts Gun
+- Water erodes Rock
+- Water extinguishes Fire
+- Water dulls Scissors
+- Dragon scorches Devil
+- Dragon melts Lightning
+- Dragon crushes Gun
+- Dragon shatters Rock
+- Dragon vaporizes Fire
+- Dragon snaps Scissors
+- Dragon devours Snake
+- Devil corrupts Lightning
+- Devil curses Gun
+- Devil shatters Rock
+- Devil consumes Fire
+- Devil enslaves Scissors
+- Devil poisons Snake
+- Devil tempts Human
+- Lightning blasts Gun
+- Lightning splits Rock
+- Lightning ignites Fire
+- Lightning melts Scissors
+- Lightning fries Snake
+- Lightning shocks Human
+- Lightning burns Tree
+- Gun shatters Rock
+- Gun extinguishes Fire
+- Gun smashes Scissors
+- Gun kills Snake
+- Gun shoots Human
+- Gun fells Tree
+- Gun slays Wolf
+
+If both participants choose the same option, the result is a draw.

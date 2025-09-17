@@ -1,0 +1,35 @@
+This is a competitive game played between two participants.
+
+Each participant selects one of the following options:
+- Rock
+- Paper
+- Scissors
+- Lizard
+- Spock
+- Fire
+- Water
+
+Rules:
+- Rock drowns Fire
+- Rock crushes Scissors
+- Rock knocks out Lizard
+- Fire burns Scissors
+- Fire burns Lizard
+- Fire burns Paper
+- Scissors cut Lizard
+- Scissors cut Paper
+- Scissors cut Spock
+- Lizard eats Paper
+- Lizard poisons Spock
+- Lizard drinks Water
+- Paper covers Rock
+- Paper disproves Spock
+- Paper absorbs Water
+- Spock vaporizes Rock
+- Spock puts out Fire
+- Spock electrifies Water
+- Water erodes Rock
+- Water extinguishes Fire
+- Water rusts Scissors
+
+If both participants choose the same option, the result is a draw.

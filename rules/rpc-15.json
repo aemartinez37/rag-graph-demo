@@ -1,0 +1,1325 @@
+[
+  {
+    "documentId": "doc_naazi5",
+    "text": "This is a competitive game played between two participants.\n\nEach participant selects one of the following options:\n- Rock\n- Paper\n- Scissors\n- Lizard\n- Spock\n- Fire\n- Water\n\nRules:\n- Rock drowns Fire\n- Rock crushes Scissors\n- Rock knocks out Lizard\n- Fire burns Scissors\n- Fire burns Lizard\n- Fire burns Paper\n- Scissors cut Lizard\n- Scissors cut Paper\n- Scissors cut Spock\n- Lizard eats Paper\n- Lizard poisons Spock\n- Lizard drinks Water\n- Paper covers Rock\n- Paper disproves Spock\n- Paper absorbs Water\n- Spock vaporizes Rock\n- Spock puts out Fire\n- Spock electrifies Water\n- Water erodes Rock\n- Water extinguishes Fire\n- Water rusts Scissors\n\nIf both participants choose the same option, the result is a draw.\n",
+    "extractions": [
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Fire",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Fire",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Scissors",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Scissors",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Snake",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Snake",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Human",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Human",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Tree",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Tree",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Wolf",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Wolf",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Sponge",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Sponge",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Scissors",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Scissors",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Snake",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Snake",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Human",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Human",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Tree",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Tree",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Wolf",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Wolf",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Sponge",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Sponge",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Paper",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Paper",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Snake",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Snake",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Human",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Human",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Tree",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Tree",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Wolf",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Wolf",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Sponge",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Sponge",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Paper",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Paper",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Air",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Air",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Human",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Human",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Tree",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Tree",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Wolf",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Wolf",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Sponge",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Sponge",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Paper",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Paper",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Air",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Air",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Snake bites Water",
+        "attributes": {
+          "winner": "Snake",
+          "loser": "Water",
+          "action": "bites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human chops Tree",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Tree",
+          "action": "chops",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human traps Wolf",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Wolf",
+          "action": "traps",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human squeezes Sponge",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Sponge",
+          "action": "squeezes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human writes Paper",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Paper",
+          "action": "writes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human breathes Air",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Air",
+          "action": "breathes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human drinks Water",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Water",
+          "action": "drinks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Human slays Dragon",
+        "attributes": {
+          "winner": "Human",
+          "loser": "Dragon",
+          "action": "slays",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree shelters Wolf",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Wolf",
+          "action": "shelters",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree absorbs Sponge",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Sponge",
+          "action": "absorbs",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree holds Paper",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Paper",
+          "action": "holds",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree parts Air",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Air",
+          "action": "parts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree drinks Water",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Water",
+          "action": "drinks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree binds Dragon",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Dragon",
+          "action": "binds",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Tree resists Devil",
+        "attributes": {
+          "winner": "Tree",
+          "loser": "Devil",
+          "action": "resists",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf eats Sponge",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Sponge",
+          "action": "eats",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf tears Paper",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Paper",
+          "action": "tears",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf howls through Air",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Air",
+          "action": "howls through",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf drinks Water",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Water",
+          "action": "drinks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf hunts Dragon",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Dragon",
+          "action": "hunts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf defies Devil",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Devil",
+          "action": "defies",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Wolf dodges Lightning",
+        "attributes": {
+          "winner": "Wolf",
+          "loser": "Lightning",
+          "action": "dodges",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge soaks Paper",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Paper",
+          "action": "soaks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge filters Air",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Air",
+          "action": "filters",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge absorbs Water",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Water",
+          "action": "absorbs",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge smothers Dragon",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Dragon",
+          "action": "smothers",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge clings to Devil",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Devil",
+          "action": "clings to",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge insulates Lightning",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Lightning",
+          "action": "insulates",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Sponge jams Gun",
+        "attributes": {
+          "winner": "Sponge",
+          "loser": "Gun",
+          "action": "jams",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper fans Air",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Air",
+          "action": "fans",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper covers Water",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Water",
+          "action": "covers",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper binds Dragon",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Dragon",
+          "action": "binds",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper exorcises Devil",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Devil",
+          "action": "exorcises",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper grounds Lightning",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Lightning",
+          "action": "grounds",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper jams Gun",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Gun",
+          "action": "jams",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper wraps Rock",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Rock",
+          "action": "wraps",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air evaporates Water",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Water",
+          "action": "evaporates",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air erodes Dragon",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Dragon",
+          "action": "erodes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air disperses Devil",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Devil",
+          "action": "disperses",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air diffuses Lightning",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Lightning",
+          "action": "diffuses",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air rusts Gun",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Gun",
+          "action": "rusts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air weathers Rock",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Rock",
+          "action": "weathers",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Air fuels Fire",
+        "attributes": {
+          "winner": "Air",
+          "loser": "Fire",
+          "action": "fuels",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water drowns Dragon",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Dragon",
+          "action": "drowns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water quenches Devil",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Devil",
+          "action": "quenches",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water conducts Lightning",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Lightning",
+          "action": "conducts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water rusts Gun",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Gun",
+          "action": "rusts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water erodes Rock",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Rock",
+          "action": "erodes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water extinguishes Fire",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Fire",
+          "action": "extinguishes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water dulls Scissors",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Scissors",
+          "action": "dulls",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon scorches Devil",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Devil",
+          "action": "scorches",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon melts Lightning",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Lightning",
+          "action": "melts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon crushes Gun",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Gun",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon shatters Rock",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Rock",
+          "action": "shatters",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon vaporizes Fire",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Fire",
+          "action": "vaporizes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon snaps Scissors",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Scissors",
+          "action": "snaps",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Dragon devours Snake",
+        "attributes": {
+          "winner": "Dragon",
+          "loser": "Snake",
+          "action": "devours",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil corrupts Lightning",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Lightning",
+          "action": "corrupts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil curses Gun",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Gun",
+          "action": "curses",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil shatters Rock",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Rock",
+          "action": "shatters",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil consumes Fire",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Fire",
+          "action": "consumes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil enslaves Scissors",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Scissors",
+          "action": "enslaves",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil poisons Snake",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Snake",
+          "action": "poisons",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Devil tempts Human",
+        "attributes": {
+          "winner": "Devil",
+          "loser": "Human",
+          "action": "tempts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning blasts Gun",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Gun",
+          "action": "blasts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning splits Rock",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Rock",
+          "action": "splits",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning ignites Fire",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Fire",
+          "action": "ignites",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning melts Scissors",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Scissors",
+          "action": "melts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning fries Snake",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Snake",
+          "action": "fries",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning shocks Human",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Human",
+          "action": "shocks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lightning burns Tree",
+        "attributes": {
+          "winner": "Lightning",
+          "loser": "Tree",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun shatters Rock",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Rock",
+          "action": "shatters",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun extinguishes Fire",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Fire",
+          "action": "extinguishes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun smashes Scissors",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Scissors",
+          "action": "smashes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun kills Snake",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Snake",
+          "action": "kills",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun shoots Human",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Human",
+          "action": "shoots",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun fells Tree",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Tree",
+          "action": "fells",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Gun slays Wolf",
+        "attributes": {
+          "winner": "Gun",
+          "loser": "Wolf",
+          "action": "slays",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Rock",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Fire",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Scissors",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Snake",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Human",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Tree",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Wolf",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Sponge",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Paper",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Air",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Water",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Dragon",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Devil",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Lightning",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Gun",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      }
+    ]
+  }
+]

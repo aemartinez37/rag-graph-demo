@@ -1,0 +1,309 @@
+[
+  {
+    "documentId": "doc_naazi5",
+    "text": "This is a competitive game played between two participants.\n\nEach participant selects one of the following options:\n- Rock\n- Paper\n- Scissors\n- Lizard\n- Spock\n- Fire\n- Water\n\nRules:\n- Rock drowns Fire\n- Rock crushes Scissors\n- Rock knocks out Lizard\n- Fire burns Scissors\n- Fire burns Lizard\n- Fire burns Paper\n- Scissors cut Lizard\n- Scissors cut Paper\n- Scissors cut Spock\n- Lizard eats Paper\n- Lizard poisons Spock\n- Lizard drinks Water\n- Paper covers Rock\n- Paper disproves Spock\n- Paper absorbs Water\n- Spock vaporizes Rock\n- Spock puts out Fire\n- Spock electrifies Water\n- Water erodes Rock\n- Water extinguishes Fire\n- Water rusts Scissors\n\nIf both participants choose the same option, the result is a draw.\n",
+    "extractions": [
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock drowns Fire",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Fire",
+          "action": "drowns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock crushes Scissors",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Scissors",
+          "action": "crushes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Rock knocks out Lizard",
+        "attributes": {
+          "winner": "Rock",
+          "loser": "Lizard",
+          "action": "knocks out",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Scissors",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Scissors",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Lizard",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Lizard",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Fire burns Paper",
+        "attributes": {
+          "winner": "Fire",
+          "loser": "Paper",
+          "action": "burns",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Lizard",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Lizard",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Paper",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Paper",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Scissors cut Spock",
+        "attributes": {
+          "winner": "Scissors",
+          "loser": "Spock",
+          "action": "cut",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lizard eats Paper",
+        "attributes": {
+          "winner": "Lizard",
+          "loser": "Paper",
+          "action": "eats",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lizard poisons Spock",
+        "attributes": {
+          "winner": "Lizard",
+          "loser": "Spock",
+          "action": "poisons",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Lizard drinks Water",
+        "attributes": {
+          "winner": "Lizard",
+          "loser": "Water",
+          "action": "drinks",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper covers Rock",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Rock",
+          "action": "covers",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper disproves Spock",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Spock",
+          "action": "disproves",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Paper absorbs Water",
+        "attributes": {
+          "winner": "Paper",
+          "loser": "Water",
+          "action": "absorbs",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Spock vaporizes Rock",
+        "attributes": {
+          "winner": "Spock",
+          "loser": "Rock",
+          "action": "vaporizes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Spock puts out Fire",
+        "attributes": {
+          "winner": "Spock",
+          "loser": "Fire",
+          "action": "puts out",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Spock electrifies Water",
+        "attributes": {
+          "winner": "Spock",
+          "loser": "Water",
+          "action": "electrifies",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water erodes Rock",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Rock",
+          "action": "erodes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water extinguishes Fire",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Fire",
+          "action": "extinguishes",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "Water rusts Scissors",
+        "attributes": {
+          "winner": "Water",
+          "loser": "Scissors",
+          "action": "rusts",
+          "condition": "standard play"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Rock",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Paper",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Scissors",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Lizard",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Spock",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Fire",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      },
+      {
+        "extractionClass": "game_rule",
+        "extractionText": "If both participants choose the same option, the result is a draw.",
+        "attributes": {
+          "interaction": "draw",
+          "option": "Water",
+          "condition": "same option chosen"
+        },
+        "alignmentStatus": "match_exact"
+      }
+    ]
+  }
+]
