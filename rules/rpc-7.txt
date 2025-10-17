@@ -9,7 +9,7 @@ Each participant selects one of the following options:
 - Fire
 - Water
 
-Rules:
+Game rules:
 - Rock drowns Fire
 - Rock crushes Scissors
 - Rock knocks out Lizard
@@ -31,5 +31,3 @@ Rules:
 - Water erodes Rock
 - Water extinguishes Fire
 - Water rusts Scissors
-
-If both participants choose the same option, the result is a draw.

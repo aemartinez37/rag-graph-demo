@@ -17,7 +17,7 @@ Each participant selects one of the following options:
 - Lightning
 - Gun
 
-Rules:
+Game rules:
 - Rock crushes Fire
 - Rock crushes Scissors
 - Rock crushes Snake
@@ -123,5 +123,3 @@ Rules:
 - Gun shoots Human
 - Gun fells Tree
 - Gun slays Wolf
-
-If both participants choose the same option, the result is a draw.

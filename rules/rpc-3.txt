@@ -5,9 +5,7 @@ Each participant selects one of the following options:
 - Paper
 - Scissors
 
-Rules:
+Game rules:
 - Rock crushes Scissors
 - Scissors cuts Paper
 - Paper covers Rock
-
-If both participants choose the same option, the result is a draw.
