@@ -1,0 +1,97 @@
+diff --git a/src/constants.ts b/src/constants.ts
+new file mode 100644
+index 0000000..4b591d8
+--- /dev/null
++++ b/src/constants.ts
+@@ -0,0 +1,22 @@
++export const GRAPH_SCHEMA = `
++Node Types:
++- Symbol
++
++Node Properties:
++- Symbol:
++  - name: STRING
++
++Relationship Types:
++- DEFEATS
++- DRAWS
++
++Relationship Properties:
++- DEFEATS:
++  - action: STRING
++- DRAWS:
++  - action: STRING
++
++Relationship Patterns:
++- (:Symbol)-[:DEFEATS]->(:Symbol)
++- (:Symbol)-[:DRAWS]->(:Symbol)
++`;
+diff --git a/src/services/db.ts b/src/services/db.ts
+index f149f1d..5c37c04 100644
+--- a/src/services/db.ts
++++ b/src/services/db.ts
+@@ -56,3 +56,13 @@ export async function saveExtractedRules(
+     await closeDriver();
+   }
+ }
++
++export async function runCypher(query: string): Promise<Object> {
++  const session = driver.session();
++  try {
++    const result = await session.run(query);
++    return result.records.map((r) => r.toObject());
++  } finally {
++    await session.close();
++  }
++}
+diff --git a/src/services/gemini.ts b/src/services/gemini.ts
+new file mode 100644
+index 0000000..dc7f787
+--- /dev/null
++++ b/src/services/gemini.ts
+@@ -0,0 +1,45 @@
++import { GoogleGenerativeAI } from "@google/generative-ai";
++import { config } from "../config";
++import { GRAPH_SCHEMA } from "../constants";
++
++const genAI = new GoogleGenerativeAI(config.gemini.apiKey);
++
++export async function getGeminiEmbedding(text: string): Promise<number[]> {
++  const model = genAI.getGenerativeModel({
++    model: config.gemini.embeddingModel,
++  });
++
++  const result = await model.embedContent(text);
++
++  return result.embedding.values;
++}
++
++export async function getGeminiQuery(message: string): Promise<string> {
++  const model = genAI.getGenerativeModel({
++    model: config.gemini.chatModel,
++    generationConfig: { temperature: 0.2 },
++    systemInstruction: `
++    Task: Generate Cypher statement to query a graph database answering a given natural language question.
++
++    Instructions:
++    - Use only the provided relationship types and properties in the given schema.
++    - Do not use any other relationship types or properties that are not provided in the schema.
++    - Do not include any explanations or apologies in your responses.
++    - The properties 'name' is a case-sensitive single words and must be compared capitalized.
++    - The properties 'action' is case-sensitive and must be compared in lowercase.
++    - Do not infer any property values unless explicitly provided in the question.
++    - Every node and relationship in the query MUST have an associated variable.
++    - Always look for relational responses (i.e., symbol -> relationship -> symbol).
++    - Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
++    - Do not include any text except the generated Cypher statement.
++    - Do not include any formatting or markdown.
++
++    Schema:
++    ${GRAPH_SCHEMA}
++  `,
++  });
++  const prompt = `The question is: "${message}"`;
++
++  const result = await model.generateContent(prompt);
++  return result.response.text().trim();
++}
