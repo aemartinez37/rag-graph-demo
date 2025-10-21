@@ -22,14 +22,16 @@ export async function getGeminiQuery(message: string): Promise<string> {
     Task: Generate Cypher statement to query a graph database answering a given natural language question.
 
     Instructions:
-    - Use only the provided relationship types and properties in the given schema.
+    - Only DEFEATS and TIES relationships are considered 'rules' in the game.
+    - Do not use multi directional link when querying only one type of relationship.
+    - Multi directional links are only allowed when querying with multiple types of relationships.
     - Do not use any other relationship types or properties that are not provided in the schema.
     - Do not include any explanations or apologies in your responses.
     - The properties 'name' is a case-sensitive single words and must be compared capitalized.
     - The properties 'action' is case-sensitive and must be compared in lowercase.
     - Do not infer any property values unless explicitly provided in the question.
     - Every node and relationship in the query MUST have an associated variable.
-    - Always look for relational responses (i.e., symbol -> relationship -> symbol).
+    - Always look for relational responses (i.e., Move -> relationship -> Move).
     - Do not respond to any questions that might ask anything else than for you to construct a Cypher statement.
     - Do not include any text except the generated Cypher statement.
     - Do not include any formatting or markdown.

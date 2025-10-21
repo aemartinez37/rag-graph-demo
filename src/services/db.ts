@@ -18,7 +18,7 @@ export async function saveExtractedRules(
 
   try {
     // Clean existing rules
-    await session.run(`MATCH (s:Symbol) DETACH DELETE s`);
+    await session.run(`MATCH (s:Move) DETACH DELETE s`);
 
     // Save new rules
     if (!document.extractions || !Array.isArray(document.extractions)) return;
@@ -32,18 +32,19 @@ export async function saveExtractedRules(
         // For tie, self-referential relationship
         await session.run(
           `
-            MERGE (s:Symbol {name: $option})
-            MERGE (s)-[:DRAWS {action: $action}]->(s)
+            MERGE (s:Move {name: $option})
+            MERGE (s)-[:TIES]->(s)
             `,
-          { option, action: "ties" }
+          { option }
         );
       } else {
         const { winner, loser, action } = attrs;
         await session.run(
           `
-            MERGE (w:Symbol {name: $winner})
-            MERGE (l:Symbol {name: $loser})
+            MERGE (w:Move {name: $winner})
+            MERGE (l:Move {name: $loser})
             MERGE (w)-[:DEFEATS {action: $action}]->(l)
+            MERGE (l)-[:LOSES_TO]->(w)
             `,
           { winner, loser, action }
         );

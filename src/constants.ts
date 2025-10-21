@@ -1,22 +1,20 @@
 export const GRAPH_SCHEMA = `
 Node Types:
-- Symbol
+- Move
 
 Node Properties:
-- Symbol:
+- Move:
   - name: STRING
 
 Relationship Types:
 - DEFEATS
-- DRAWS
-
-Relationship Properties:
-- DEFEATS:
-  - action: STRING
-- DRAWS:
-  - action: STRING
+  Properties:
+    - action: STRING
+- LOSES_TO
+- TIES
 
 Relationship Patterns:
-- (:Symbol)-[:DEFEATS]->(:Symbol)
-- (:Symbol)-[:DRAWS]->(:Symbol)
+- (:Move)-[:DEFEATS]->(:Move)
+- (:Move)-[:LOSES_TO]->(:Move)
+- (:Move)-[:TIES]->(:Move)
 `;
