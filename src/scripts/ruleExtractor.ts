@@ -5,7 +5,7 @@ import { saveExtractedRules } from "../services/db";
 
 type allowedRPCVersions = "3" | "7" | "15";
 
-const RPC_VERSION: allowedRPCVersions = "3";
+const RPC_VERSION: allowedRPCVersions = "15";
 
 async function seedGraph() {
   const examples: ExampleData[] = [

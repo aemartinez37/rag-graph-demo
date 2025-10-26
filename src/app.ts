@@ -1,7 +1,14 @@
-import readline from "readline-sync";
+import { createInterface } from "readline";
 import chalk from "chalk";
 import { getGeminiQuery, getGeminiResponse } from "./services/gemini";
 import { runCypher } from "./services/db";
+
+const rl = createInterface({
+  input: process.stdin,
+  output: process.stdout,
+  prompt: "\n🗣️  Ask your question: ",
+  historySize: 100,
+});
 
 process.stdout.write("\x1Bc");
 console.log(
@@ -22,8 +29,9 @@ console.log(
 );
 
 (async () => {
-  while (true) {
-    const question = readline.question("\n🗣️  Ask your question: ");
+  rl.prompt();
+
+  for await (const question of rl) {
     // Generate Cypher query
     const cypherQuery = await getGeminiQuery(question);
 
@@ -37,6 +45,8 @@ console.log(
       JSON.stringify(result)
     );
 
+    console.log(chalk.blueBright(`\n-> ${cypherQuery}`));
     console.log(chalk.greenBright(`\n🤖: ${response}`));
+    rl.prompt();
   }
 })();

@@ -1,0 +1,24 @@
+# RPC-3 #
+
+If the opponent plays scissors, what move should I choose to win?
+What beats to paper?
+Which move rock defeats?
+If you play paper and the opponent plays scissors?
+What move loses to rock?
+What happens if both players choose paper?
+If you play rock and your opponent plays rock, is it a win, loss, or tie?
+You lost to scissors. What did you play?
+If you want to guarantee a tie, what should you play against paper?
+What move loses to the move that loses to paper?
+
+
+# RPC-7 #
+
+If you play lizard and the opponent plays spock?
+What are lizard rules? (Include actions)
+
+
+# RPC-15 #
+
+What are wolf rules? (Include actions)
+What move loses to the move that loses to dragon?
