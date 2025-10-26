@@ -1,6 +1,6 @@
 import { createInterface } from "readline";
 import chalk from "chalk";
-import { getGeminiQuery } from "./services/gemini";
+import { getGeminiQuery, getGeminiResponse } from "./services/gemini";
 import { runCypher } from "./services/db";
 
 const rl = createInterface({
@@ -38,7 +38,16 @@ console.log(
     // Execute generated query
     const result = await runCypher(cypherQuery);
 
+    // Generate Natural Language response
+    const response = await getGeminiResponse(
+      question,
+      cypherQuery,
+      JSON.stringify(result)
+    );
+
     console.log(chalk.blueBright(`\n-> ${cypherQuery}`));
+    console.log(chalk.blueBright(`\n---> ${JSON.stringify(result)}`));
+    console.log(chalk.greenBright(`\n🤖: ${response}`));
     rl.prompt();
   }
 })();

@@ -35,3 +35,38 @@ export async function getGeminiQuery(message: string): Promise<string> {
   const result = await model.generateContent(prompt);
   return result.response.text().trim();
 }
+
+export async function getGeminiResponse(
+  message: string,
+  query: string,
+  fact: string
+): Promise<string> {
+  const model = genAI.getGenerativeModel({
+    model: config.gemini.chatModel,
+    systemInstruction: `
+    You are an expert natural language interpreter for Neo4j query results.
+
+    Your task is to answer a user's question using the result of a Cypher query.
+
+    Inputs:
+    - Question: A natural language question about a graph-based system of moves and relationships.
+    - Cypher Query: The Cypher query that was executed to obtain the Query Result.
+    - Query Result: A JSON string returned from the Cypher Query.
+
+    Instructions:
+    - Analyze the Cypher Query and Query Result to understand the relationships and properties involved.
+    - DO NOT rely on any external knowledge or assumptions about the meaning of moves or relationships.
+    - Return only the final answer to the Question in an accurate and clear manner so it has sense to the Question.
+    - If the query result is "No result found" consider it as a falsy value and answer accordingly.
+    - DO NOT include any formatting or markdown.
+    `,
+  });
+
+  const result = await model.generateContent(`
+    Question: "${message}"
+    Cypher Query: "${query}"
+    Query Result: "${fact}"
+  `);
+
+  return result.response.text().trim();
+}

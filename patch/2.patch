@@ -1,0 +1,89 @@
+diff --git a/questions.txt b/questions.txt
+new file mode 100644
+index 0000000..43f717d
+--- /dev/null
++++ b/questions.txt
+@@ -0,0 +1,11 @@
++# RPS-3 #
++
++If the opponent plays scissors, what move should I choose to win?
++What beats to paper?
++Which move rock defeats?
++If you play paper and the opponent plays scissors?
++What move loses to rock?
++What happens if both players choose paper?
++If you play rock and your opponent plays rock, is it a win, loss, or tie?
++You lost to scissors. What did you play?
++If you want to guarantee a tie, what should you play against paper?
+diff --git a/src/app.ts b/src/app.ts
+index 16805df..dd94e8b 100644
+--- a/src/app.ts
++++ b/src/app.ts
+@@ -1,6 +1,6 @@
+ import { createInterface } from "readline";
+ import chalk from "chalk";
+-import { getGeminiQuery } from "./services/gemini";
++import { getGeminiQuery, getGeminiResponse } from "./services/gemini";
+ import { runCypher } from "./services/db";
+ 
+ const rl = createInterface({
+@@ -38,7 +38,16 @@ console.log(
+     // Execute generated query
+     const result = await runCypher(cypherQuery);
+ 
++    // Generate Natural Language response
++    const response = await getGeminiResponse(
++      question,
++      cypherQuery,
++      JSON.stringify(result)
++    );
++
+     console.log(chalk.blueBright(`\n-> ${cypherQuery}`));
++    console.log(chalk.blueBright(`\n---> ${JSON.stringify(result)}`));
++    console.log(chalk.greenBright(`\n🤖: ${response}`));
+     rl.prompt();
+   }
+ })();
+diff --git a/src/services/gemini.ts b/src/services/gemini.ts
+index 311753e..3b57459 100644
+--- a/src/services/gemini.ts
++++ b/src/services/gemini.ts
+@@ -35,3 +35,38 @@ export async function getGeminiQuery(message: string): Promise<string> {
+   const result = await model.generateContent(prompt);
+   return result.response.text().trim();
+ }
++
++export async function getGeminiResponse(
++  message: string,
++  query: string,
++  fact: string
++): Promise<string> {
++  const model = genAI.getGenerativeModel({
++    model: config.gemini.chatModel,
++    systemInstruction: `
++    You are an expert natural language interpreter for Neo4j query results.
++
++    Your task is to answer a user's question using the result of a Cypher query.
++
++    Inputs:
++    - Question: A natural language question about a graph-based system of moves and relationships.
++    - Cypher Query: The Cypher query that was executed to obtain the Query Result.
++    - Query Result: A JSON string returned from the Cypher Query.
++
++    Instructions:
++    - Analyze the Cypher Query and Query Result to understand the relationships and properties involved.
++    - DO NOT rely on any external knowledge or assumptions about the meaning of moves or relationships.
++    - Return only the final answer to the Question in an accurate and clear manner so it has sense to the Question.
++    - If the query result is "No result found" consider it as a falsy value and answer accordingly.
++    - DO NOT include any formatting or markdown.
++    `,
++  });
++
++  const result = await model.generateContent(`
++    Question: "${message}"
++    Cypher Query: "${query}"
++    Query Result: "${fact}"
++  `);
++
++  return result.response.text().trim();
++}
