@@ -57,3 +57,13 @@ export async function saveExtractedRules(
     await closeDriver();
   }
 }
+
+export async function runCypher(query: string): Promise<Object> {
+  const session = driver.session();
+  try {
+    const result = await session.run(query);
+    return result.records.map((r) => r.toObject());
+  } finally {
+    await session.close();
+  }
+}
