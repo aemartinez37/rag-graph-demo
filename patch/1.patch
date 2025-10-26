@@ -1,0 +1,137 @@
+diff --git a/src/app.ts b/src/app.ts
+new file mode 100644
+index 0000000..16805df
+--- /dev/null
++++ b/src/app.ts
+@@ -0,0 +1,44 @@
++import { createInterface } from "readline";
++import chalk from "chalk";
++import { getGeminiQuery } from "./services/gemini";
++import { runCypher } from "./services/db";
++
++const rl = createInterface({
++  input: process.stdin,
++  output: process.stdout,
++  prompt: "\n🗣️  Ask your question: ",
++  historySize: 100,
++});
++
++process.stdout.write("\x1Bc");
++console.log(
++  chalk.greenBright(`
++   _____                 _     _____            _____ 
++  / ____|               | |   |  __ \\     /\\   / ____|
++ | |  __ _ __ __ _ _ __ | |__ | |__) |   /  \\ | |  __ 
++ | | |_ | '__/ _\` | '_ \\| '_ \\|  _  /   / /\\ \\| | |_ |
++ | |__| | | | (_| | |_) | | | | | \\ \\  / ____ \\ |__| |
++  \\_____|_|  \\__,_| .__/|_| |_|_|  \\_\\/_/    \\_\\_____|
++                  | |                                 
++                  |_|
++
++╔════════════════════════════════════════════════════════════════════╗
++║    🎮 Welcome to the Rock Paper Scissors & Beyond Assistant 🤖     ║
++╚════════════════════════════════════════════════════════════════════╝
++`)
++);
++
++(async () => {
++  rl.prompt();
++
++  for await (const question of rl) {
++    // Generate Cypher query
++    const cypherQuery = await getGeminiQuery(question);
++
++    // Execute generated query
++    const result = await runCypher(cypherQuery);
++
++    console.log(chalk.blueBright(`\n-> ${cypherQuery}`));
++    rl.prompt();
++  }
++})();
+diff --git a/src/constants.ts b/src/constants.ts
+new file mode 100644
+index 0000000..7abb3f3
+--- /dev/null
++++ b/src/constants.ts
+@@ -0,0 +1,20 @@
++export const GRAPH_SCHEMA = `
++Node Types:
++- Move
++
++Node Properties:
++- Move:
++  - name: STRING
++
++Relationship Types:
++- DEFEATS
++  Properties:
++    - action: STRING
++- LOSES_TO
++- TIES
++
++Relationship Patterns:
++- (:Move)-[:DEFEATS]->(:Move)
++- (:Move)-[:LOSES_TO]->(:Move)
++- (:Move)-[:TIES]->(:Move)
++`;
+diff --git a/src/services/db.ts b/src/services/db.ts
+index 9fc3a2c..a1d2ac8 100644
+--- a/src/services/db.ts
++++ b/src/services/db.ts
+@@ -57,3 +57,13 @@ export async function saveExtractedRules(
+     await closeDriver();
+   }
+ }
++
++export async function runCypher(query: string): Promise<Object> {
++  const session = driver.session();
++  try {
++    const result = await session.run(query);
++    return result.records.map((r) => r.toObject());
++  } finally {
++    await session.close();
++  }
++}
+diff --git a/src/services/gemini.ts b/src/services/gemini.ts
+new file mode 100644
+index 0000000..311753e
+--- /dev/null
++++ b/src/services/gemini.ts
+@@ -0,0 +1,37 @@
++import { GoogleGenerativeAI } from "@google/generative-ai";
++import { config } from "../config";
++import { GRAPH_SCHEMA } from "../constants";
++
++const genAI = new GoogleGenerativeAI(config.gemini.apiKey);
++
++export async function getGeminiQuery(message: string): Promise<string> {
++  const model = genAI.getGenerativeModel({
++    model: config.gemini.chatModel,
++    generationConfig: { temperature: 0 },
++    systemInstruction: `
++    Task: Generate Cypher statement to query a graph database answering a given natural language question.
++
++    Instructions:
++    - Only DEFEATS and TIES relationships are considered 'rules' in the game.
++    - DO NOT use multi directional link when querying only one type of relationship.
++    - Multi directional links are only allowed when querying with multiple types of relationships.
++    - DO NOT use any other relationship types or properties that are not provided in the schema.
++    - The properties 'name' is a case-sensitive single words and must be compared capitalized.
++    - The properties 'action' is case-sensitive and must be compared in lowercase.
++    - DO NOT infer any property values unless explicitly provided in the question.
++    - Every node and relationship in the query MUST have an associated variable.
++    - Always look for relational responses (i.e., Move -> relationship -> Move).
++    - DO NOT respond to any questions that might ask anything else than for you to construct a Cypher statement.
++    - DO NOT include any text except the generated Cypher statement.
++    - DO NOT include any explanations or apologies in your responses.
++    - DO NOT include any formatting or markdown.
++
++    Schema:
++    ${GRAPH_SCHEMA}
++  `,
++  });
++  const prompt = `The question is: "${message}"`;
++
++  const result = await model.generateContent(prompt);
++  return result.response.text().trim();
++}

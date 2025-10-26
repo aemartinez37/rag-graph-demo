@@ -3,9 +3,9 @@ import { config } from "../config";
 import fs from "fs";
 import { saveExtractedRules } from "../services/db";
 
-type allowedRPCVersions = "3";
+type allowedRPSVersions = "3";
 
-const RPC_VERSION: allowedRPCVersions = "3";
+const RPS_VERSION: allowedRPSVersions = "3";
 
 async function seedGraph() {
   const examples: ExampleData[] = [
@@ -38,7 +38,7 @@ async function seedGraph() {
   ];
 
   // ** Get rules from LLM extraction ** //
-  const rawText = fs.readFileSync(`./rules/rps-${RPC_VERSION}.txt`, "utf-8");
+  const rawText = fs.readFileSync(`./rules/rps-${RPS_VERSION}.txt`, "utf-8");
   const result = await extract(rawText, {
     promptDescription: `
     Extract game rules including:
@@ -56,13 +56,13 @@ async function seedGraph() {
 
   // Save extraction result
   fs.writeFileSync(
-    `./rules/rps-${RPC_VERSION}.json`,
+    `./rules/rps-${RPS_VERSION}.json`,
     JSON.stringify(result, null, 2),
     "utf-8"
   );
   // ** //
 
-  const rawData = fs.readFileSync(`./rules/rps-${RPC_VERSION}.json`, "utf-8");
+  const rawData = fs.readFileSync(`./rules/rps-${RPS_VERSION}.json`, "utf-8");
   const documents = JSON.parse(rawData);
 
   // Persist rules in Neo4j
