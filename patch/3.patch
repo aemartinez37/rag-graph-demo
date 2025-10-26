@@ -1,0 +1,1458 @@
+diff --git a/questions.txt b/questions.txt
+index 43f717d..6534d30 100644
+--- a/questions.txt
++++ b/questions.txt
+@@ -1,4 +1,4 @@
+-# RPS-3 #
++# RPC-3 #
+ 
+ If the opponent plays scissors, what move should I choose to win?
+ What beats to paper?
+@@ -9,3 +9,16 @@ What happens if both players choose paper?
+ If you play rock and your opponent plays rock, is it a win, loss, or tie?
+ You lost to scissors. What did you play?
+ If you want to guarantee a tie, what should you play against paper?
++What move loses to the move that loses to paper?
++
++
++# RPC-7 #
++
++If you play lizard and the opponent plays spock?
++What are lizard rules? (Include actions)
++
++
++# RPC-15 #
++
++What are wolf rules? (Include actions)
++What move loses to the move that loses to dragon?
+diff --git a/rules/rpc-15.json b/rules/rpc-15.json
+new file mode 100644
+index 0000000..7e98724
+--- /dev/null
++++ b/rules/rpc-15.json
+@@ -0,0 +1,1188 @@
++{
++  "documentId": "doc_ndsae5",
++  "text": "This is a competitive game played between two participants.\n\nEach participant selects one of the following options:\n- Rock\n- Paper\n- Scissors\n- Lizard\n- Spock\n- Fire\n- Water\n\nGame rules:\n- Rock drowns Fire\n- Rock crushes Scissors\n- Rock knocks out Lizard\n- Fire burns Scissors\n- Fire burns Lizard\n- Fire burns Paper\n- Scissors cut Lizard\n- Scissors cut Paper\n- Scissors cut Spock\n- Lizard eats Paper\n- Lizard poisons Spock\n- Lizard drinks Water\n- Paper covers Rock\n- Paper disproves Spock\n- Paper absorbs Water\n- Spock vaporizes Rock\n- Spock puts out Fire\n- Spock electrifies Water\n- Water erodes Rock\n- Water extinguishes Fire\n- Water rusts Scissors\n",
++  "extractions": [
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Fire",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Fire",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Scissors",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Scissors",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Snake",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Snake",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Human",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Human",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Tree",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Tree",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Wolf",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Wolf",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Rock crushes Sponge",
++      "attributes": {
++        "winner": "Rock",
++        "loser": "Sponge",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Scissors",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Scissors",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Snake",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Snake",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Human",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Human",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Tree",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Tree",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Wolf",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Wolf",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Sponge",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Sponge",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Fire burns Paper",
++      "attributes": {
++        "winner": "Fire",
++        "loser": "Paper",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Snake",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Snake",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Human",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Human",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Tree",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Tree",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Wolf",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Wolf",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Sponge",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Sponge",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Paper",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Paper",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Scissors cut Air",
++      "attributes": {
++        "winner": "Scissors",
++        "loser": "Air",
++        "action": "cut"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Human",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Human",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Tree",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Tree",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Wolf",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Wolf",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Sponge",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Sponge",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Paper",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Paper",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Air",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Air",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Snake bites Water",
++      "attributes": {
++        "winner": "Snake",
++        "loser": "Water",
++        "action": "bites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human chops Tree",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Tree",
++        "action": "chops"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human traps Wolf",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Wolf",
++        "action": "traps"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human squeezes Sponge",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Sponge",
++        "action": "squeezes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human writes Paper",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Paper",
++        "action": "writes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human breathes Air",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Air",
++        "action": "breathes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human drinks Water",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Water",
++        "action": "drinks"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Human slays Dragon",
++      "attributes": {
++        "winner": "Human",
++        "loser": "Dragon",
++        "action": "slays"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree shelters Wolf",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Wolf",
++        "action": "shelters"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree absorbs Sponge",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Sponge",
++        "action": "absorbs"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree holds Paper",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Paper",
++        "action": "holds"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree parts Air",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Air",
++        "action": "parts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree drinks Water",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Water",
++        "action": "drinks"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree binds Dragon",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Dragon",
++        "action": "binds"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Tree resists Devil",
++      "attributes": {
++        "winner": "Tree",
++        "loser": "Devil",
++        "action": "resists"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf eats Sponge",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Sponge",
++        "action": "eats"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf tears Paper",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Paper",
++        "action": "tears"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf howls through Air",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Air",
++        "action": "howls through"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf drinks Water",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Water",
++        "action": "drinks"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf hunts Dragon",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Dragon",
++        "action": "hunts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf defies Devil",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Devil",
++        "action": "defies"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Wolf dodges Lightning",
++      "attributes": {
++        "winner": "Wolf",
++        "loser": "Lightning",
++        "action": "dodges"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge soaks Paper",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Paper",
++        "action": "soaks"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge filters Air",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Air",
++        "action": "filters"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge absorbs Water",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Water",
++        "action": "absorbs"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge smothers Dragon",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Dragon",
++        "action": "smothers"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge clings to Devil",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Devil",
++        "action": "clings to"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge insulates Lightning",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Lightning",
++        "action": "insulates"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Sponge jams Gun",
++      "attributes": {
++        "winner": "Sponge",
++        "loser": "Gun",
++        "action": "jams"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper fans Air",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Air",
++        "action": "fans"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper covers Water",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Water",
++        "action": "covers"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper binds Dragon",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Dragon",
++        "action": "binds"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper exorcises Devil",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Devil",
++        "action": "exorcises"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper grounds Lightning",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Lightning",
++        "action": "grounds"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper jams Gun",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Gun",
++        "action": "jams"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Paper wraps Rock",
++      "attributes": {
++        "winner": "Paper",
++        "loser": "Rock",
++        "action": "wraps"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air evaporates Water",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Water",
++        "action": "evaporates"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air erodes Dragon",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Dragon",
++        "action": "erodes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air disperses Devil",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Devil",
++        "action": "disperses"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air diffuses Lightning",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Lightning",
++        "action": "diffuses"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air rusts Gun",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Gun",
++        "action": "rusts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air weathers Rock",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Rock",
++        "action": "weathers"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Air fuels Fire",
++      "attributes": {
++        "winner": "Air",
++        "loser": "Fire",
++        "action": "fuels"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water drowns Dragon",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Dragon",
++        "action": "drowns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water quenches Devil",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Devil",
++        "action": "quenches"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water conducts Lightning",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Lightning",
++        "action": "conducts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water rusts Gun",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Gun",
++        "action": "rusts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water erodes Rock",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Rock",
++        "action": "erodes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water extinguishes Fire",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Fire",
++        "action": "extinguishes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Water dulls Scissors",
++      "attributes": {
++        "winner": "Water",
++        "loser": "Scissors",
++        "action": "dulls"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon scorches Devil",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Devil",
++        "action": "scorches"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon melts Lightning",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Lightning",
++        "action": "melts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon crushes Gun",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Gun",
++        "action": "crushes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon shatters Rock",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Rock",
++        "action": "shatters"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon vaporizes Fire",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Fire",
++        "action": "vaporizes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon snaps Scissors",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Scissors",
++        "action": "snaps"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Dragon devours Snake",
++      "attributes": {
++        "winner": "Dragon",
++        "loser": "Snake",
++        "action": "devours"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil corrupts Lightning",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Lightning",
++        "action": "corrupts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil curses Gun",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Gun",
++        "action": "curses"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil shatters Rock",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Rock",
++        "action": "shatters"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil consumes Fire",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Fire",
++        "action": "consumes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil enslaves Scissors",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Scissors",
++        "action": "enslaves"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil poisons Snake",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Snake",
++        "action": "poisons"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Devil tempts Human",
++      "attributes": {
++        "winner": "Devil",
++        "loser": "Human",
++        "action": "tempts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning blasts Gun",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Gun",
++        "action": "blasts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning splits Rock",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Rock",
++        "action": "splits"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning ignites Fire",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Fire",
++        "action": "ignites"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning melts Scissors",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Scissors",
++        "action": "melts"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning fries Snake",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Snake",
++        "action": "fries"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning shocks Human",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Human",
++        "action": "shocks"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Lightning burns Tree",
++      "attributes": {
++        "winner": "Lightning",
++        "loser": "Tree",
++        "action": "burns"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun shatters Rock",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Rock",
++        "action": "shatters"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun extinguishes Fire",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Fire",
++        "action": "extinguishes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun smashes Scissors",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Scissors",
++        "action": "smashes"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun kills Snake",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Snake",
++        "action": "kills"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun shoots Human",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Human",
++        "action": "shoots"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun fells Tree",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Tree",
++        "action": "fells"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "regular_rule",
++      "extractionText": "Gun slays Wolf",
++      "attributes": {
++        "winner": "Gun",
++        "loser": "Wolf",
++        "action": "slays"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Rock",
++      "attributes": {
++        "option": "Rock"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Fire",
++      "attributes": {
++        "option": "Fire"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Scissors",
++      "attributes": {
++        "option": "Scissors"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Snake",
++      "attributes": {
++        "option": "Snake"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Human",
++      "attributes": {
++        "option": "Human"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Tree",
++      "attributes": {
++        "option": "Tree"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Wolf",
++      "attributes": {
++        "option": "Wolf"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Sponge",
++      "attributes": {
++        "option": "Sponge"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Paper",
++      "attributes": {
++        "option": "Paper"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Air",
++      "attributes": {
++        "option": "Air"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Water",
++      "attributes": {
++        "option": "Water"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Dragon",
++      "attributes": {
++        "option": "Dragon"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Devil",
++      "attributes": {
++        "option": "Devil"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Lightning",
++      "attributes": {
++        "option": "Lightning"
++      },
++      "alignmentStatus": "match_exact"
++    },
++    {
++      "extractionClass": "tie_rule",
++      "extractionText": "Gun",
++      "attributes": {
++        "option": "Gun"
++      },
++      "alignmentStatus": "match_exact"
++    }
++  ]
++}
+diff --git a/rules/rpc-15.txt b/rules/rpc-15.txt
+new file mode 100644
+index 0000000..0c9dd6a
+--- /dev/null
++++ b/rules/rpc-15.txt
+@@ -0,0 +1,125 @@
++This is a competitive game played between two participants.
++
++Each participant selects one of the following options:
++- Rock
++- Fire
++- Scissors
++- Snake
++- Human
++- Tree
++- Wolf
++- Sponge
++- Paper
++- Air
++- Water
++- Dragon
++- Devil
++- Lightning
++- Gun
++
++Game rules:
++- Rock crushes Fire
++- Rock crushes Scissors
++- Rock crushes Snake
++- Rock crushes Human
++- Rock crushes Tree
++- Rock crushes Wolf
++- Rock crushes Sponge
++- Fire burns Scissors
++- Fire burns Snake
++- Fire burns Human
++- Fire burns Tree
++- Fire burns Wolf
++- Fire burns Sponge
++- Fire burns Paper
++- Scissors cut Snake
++- Scissors cut Human
++- Scissors cut Tree
++- Scissors cut Wolf
++- Scissors cut Sponge
++- Scissors cut Paper
++- Scissors cut Air
++- Snake bites Human
++- Snake bites Tree
++- Snake bites Wolf
++- Snake bites Sponge
++- Snake bites Paper
++- Snake bites Air
++- Snake bites Water
++- Human chops Tree
++- Human traps Wolf
++- Human squeezes Sponge
++- Human writes Paper
++- Human breathes Air
++- Human drinks Water
++- Human slays Dragon
++- Tree shelters Wolf
++- Tree absorbs Sponge
++- Tree holds Paper
++- Tree parts Air
++- Tree drinks Water
++- Tree binds Dragon
++- Tree resists Devil
++- Wolf eats Sponge
++- Wolf tears Paper
++- Wolf howls through Air
++- Wolf drinks Water
++- Wolf hunts Dragon
++- Wolf defies Devil
++- Wolf dodges Lightning
++- Sponge soaks Paper
++- Sponge filters Air
++- Sponge absorbs Water
++- Sponge smothers Dragon
++- Sponge clings to Devil
++- Sponge insulates Lightning
++- Sponge jams Gun
++- Paper fans Air
++- Paper covers Water
++- Paper binds Dragon
++- Paper exorcises Devil
++- Paper grounds Lightning
++- Paper jams Gun
++- Paper wraps Rock
++- Air evaporates Water
++- Air erodes Dragon
++- Air disperses Devil
++- Air diffuses Lightning
++- Air rusts Gun
++- Air weathers Rock
++- Air fuels Fire
++- Water drowns Dragon
++- Water quenches Devil
++- Water conducts Lightning
++- Water rusts Gun
++- Water erodes Rock
++- Water extinguishes Fire
++- Water dulls Scissors
++- Dragon scorches Devil
++- Dragon melts Lightning
++- Dragon crushes Gun
++- Dragon shatters Rock
++- Dragon vaporizes Fire
++- Dragon snaps Scissors
++- Dragon devours Snake
++- Devil corrupts Lightning
++- Devil curses Gun
++- Devil shatters Rock
++- Devil consumes Fire
++- Devil enslaves Scissors
++- Devil poisons Snake
++- Devil tempts Human
++- Lightning blasts Gun
++- Lightning splits Rock
++- Lightning ignites Fire
++- Lightning melts Scissors
++- Lightning fries Snake
++- Lightning shocks Human
++- Lightning burns Tree
++- Gun shatters Rock
++- Gun extinguishes Fire
++- Gun smashes Scissors
++- Gun kills Snake
++- Gun shoots Human
++- Gun fells Tree
++- Gun slays Wolf
+diff --git a/rules/rpc-7.txt b/rules/rpc-7.txt
+new file mode 100644
+index 0000000..2ab12d5
+--- /dev/null
++++ b/rules/rpc-7.txt
+@@ -0,0 +1,33 @@
++This is a competitive game played between two participants.
++
++Each participant selects one of the following options:
++- Rock
++- Paper
++- Scissors
++- Lizard
++- Spock
++- Fire
++- Water
++
++Game rules:
++- Rock drowns Fire
++- Rock crushes Scissors
++- Rock knocks out Lizard
++- Fire burns Scissors
++- Fire burns Lizard
++- Fire burns Paper
++- Scissors cut Lizard
++- Scissors cut Paper
++- Scissors cut Spock
++- Lizard eats Paper
++- Lizard poisons Spock
++- Lizard drinks Water
++- Paper covers Rock
++- Paper disproves Spock
++- Paper absorbs Water
++- Spock vaporizes Rock
++- Spock puts out Fire
++- Spock electrifies Water
++- Water erodes Rock
++- Water extinguishes Fire
++- Water rusts Scissors
+diff --git a/src/scripts/ruleExtractor.ts b/src/scripts/ruleExtractor.ts
+index 16b29b8..f50b229 100644
+--- a/src/scripts/ruleExtractor.ts
++++ b/src/scripts/ruleExtractor.ts
+@@ -3,9 +3,9 @@ import { config } from "../config";
+ import fs from "fs";
+ import { saveExtractedRules } from "../services/db";
+ 
+-type allowedRPCVersions = "3";
++type allowedRPCVersions = "3" | "7" | "15";
+ 
+-const RPC_VERSION: allowedRPCVersions = "3";
++const RPC_VERSION: allowedRPCVersions = "7";
+ 
+ async function seedGraph() {
+   const examples: ExampleData[] = [
+@@ -38,9 +38,12 @@ async function seedGraph() {
+   ];
+ 
+   // ** Get rules from LLM extraction ** //
+-  const rawText = fs.readFileSync(`./rules/rps-${RPC_VERSION}.txt`, "utf-8");
+-  const result = await extract(rawText, {
+-    promptDescription: `
++  if (RPC_VERSION !== "15") {
++    // Guard to avoid overwriting rpc-15 rules file.
++    const rawText = fs.readFileSync(`./rules/rpc-${RPC_VERSION}.txt`, "utf-8");
++
++    const result = await extract(rawText, {
++      promptDescription: `
+     Extract game rules including:
+     - winner, loser, action for regular rules
+     - option for tie rules
+@@ -48,21 +51,22 @@ async function seedGraph() {
+     Return one tie rule for each option.
+     Do not include any formatting or markdown.
+     `,
+-    examples,
+-    modelType: "gemini",
+-    apiKey: config.gemini.apiKey,
+-    modelId: config.gemini.chatModel,
+-  });
++      examples,
++      modelType: "gemini",
++      apiKey: config.gemini.apiKey,
++      modelId: config.gemini.chatModel,
++    });
+ 
+-  // Save extraction result
+-  fs.writeFileSync(
+-    `./rules/rps-${RPC_VERSION}.json`,
+-    JSON.stringify(result, null, 2),
+-    "utf-8"
+-  );
++    // Save extraction result
++    fs.writeFileSync(
++      `./rules/rpc-${RPC_VERSION}.json`,
++      JSON.stringify(result, null, 2),
++      "utf-8"
++    );
++  }
+   // ** //
+ 
+-  const rawData = fs.readFileSync(`./rules/rps-${RPC_VERSION}.json`, "utf-8");
++  const rawData = fs.readFileSync(`./rules/rpc-${RPC_VERSION}.json`, "utf-8");
+   const documents = JSON.parse(rawData);
+ 
+   // Persist rules in Neo4j
