@@ -25,11 +25,11 @@ index 43f717d..6534d30 100644
 +
 +What are wolf rules? (Include actions)
 +What move loses to the move that loses to dragon?
-diff --git a/rules/rpc-15.json b/rules/rpc-15.json
+diff --git a/rules/rps-15.json b/rules/rps-15.json
 new file mode 100644
 index 0000000..7e98724
 --- /dev/null
-+++ b/rules/rpc-15.json
++++ b/rules/rps-15.json
 @@ -0,0 +1,1188 @@
 +{
 +  "documentId": "doc_ndsae5",
@@ -1219,11 +1219,11 @@ index 0000000..7e98724
 +    }
 +  ]
 +}
-diff --git a/rules/rpc-15.txt b/rules/rpc-15.txt
+diff --git a/rules/rps-15.txt b/rules/rps-15.txt
 new file mode 100644
 index 0000000..0c9dd6a
 --- /dev/null
-+++ b/rules/rpc-15.txt
++++ b/rules/rps-15.txt
 @@ -0,0 +1,125 @@
 +This is a competitive game played between two participants.
 +
@@ -1350,11 +1350,11 @@ index 0000000..0c9dd6a
 +- Gun shoots Human
 +- Gun fells Tree
 +- Gun slays Wolf
-diff --git a/rules/rpc-7.txt b/rules/rpc-7.txt
+diff --git a/rules/rps-7.txt b/rules/rps-7.txt
 new file mode 100644
 index 0000000..2ab12d5
 --- /dev/null
-+++ b/rules/rpc-7.txt
++++ b/rules/rps-7.txt
 @@ -0,0 +1,33 @@
 +This is a competitive game played between two participants.
 +
@@ -1390,18 +1390,18 @@ index 0000000..2ab12d5
 +- Water extinguishes Fire
 +- Water rusts Scissors
 diff --git a/src/scripts/ruleExtractor.ts b/src/scripts/ruleExtractor.ts
-index 16b29b8..f50b229 100644
+index aa151c0..b6c729a 100644
 --- a/src/scripts/ruleExtractor.ts
 +++ b/src/scripts/ruleExtractor.ts
 @@ -3,9 +3,9 @@ import { config } from "../config";
  import fs from "fs";
  import { saveExtractedRules } from "../services/db";
  
--type allowedRPCVersions = "3";
-+type allowedRPCVersions = "3" | "7" | "15";
+-type allowedRPSVersions = "3";
++type allowedRPSVersions = "3" | "7" | "15";
  
--const RPC_VERSION: allowedRPCVersions = "3";
-+const RPC_VERSION: allowedRPCVersions = "7";
+-const RPS_VERSION: allowedRPSVersions = "3";
++const RPS_VERSION: allowedRPSVersions = "7";
  
  async function seedGraph() {
    const examples: ExampleData[] = [
@@ -1409,19 +1409,19 @@ index 16b29b8..f50b229 100644
    ];
  
    // ** Get rules from LLM extraction ** //
--  const rawText = fs.readFileSync(`./rules/rps-${RPC_VERSION}.txt`, "utf-8");
+-  const rawText = fs.readFileSync(`./rules/rps-${RPS_VERSION}.txt`, "utf-8");
 -  const result = await extract(rawText, {
 -    promptDescription: `
-+  if (RPC_VERSION !== "15") {
-+    // Guard to avoid overwriting rpc-15 rules file.
-+    const rawText = fs.readFileSync(`./rules/rpc-${RPC_VERSION}.txt`, "utf-8");
++  if (RPS_VERSION !== "15") {
++    // Guard to avoid overwriting rps-15 rules file.
++    const rawText = fs.readFileSync(`./rules/rps-${RPS_VERSION}.txt`, "utf-8");
 +
 +    const result = await extract(rawText, {
 +      promptDescription: `
      Extract game rules including:
      - winner, loser, action for regular rules
      - option for tie rules
-@@ -48,21 +51,22 @@ async function seedGraph() {
+@@ -48,18 +51,19 @@ async function seedGraph() {
      Return one tie rule for each option.
      Do not include any formatting or markdown.
      `,
@@ -1438,21 +1438,17 @@ index 16b29b8..f50b229 100644
  
 -  // Save extraction result
 -  fs.writeFileSync(
--    `./rules/rps-${RPC_VERSION}.json`,
+-    `./rules/rps-${RPS_VERSION}.json`,
 -    JSON.stringify(result, null, 2),
 -    "utf-8"
 -  );
 +    // Save extraction result
 +    fs.writeFileSync(
-+      `./rules/rpc-${RPC_VERSION}.json`,
++      `./rules/rps-${RPS_VERSION}.json`,
 +      JSON.stringify(result, null, 2),
 +      "utf-8"
 +    );
 +  }
    // ** //
  
--  const rawData = fs.readFileSync(`./rules/rps-${RPC_VERSION}.json`, "utf-8");
-+  const rawData = fs.readFileSync(`./rules/rpc-${RPC_VERSION}.json`, "utf-8");
-   const documents = JSON.parse(rawData);
- 
-   // Persist rules in Neo4j
+   const rawData = fs.readFileSync(`./rules/rps-${RPS_VERSION}.json`, "utf-8");
